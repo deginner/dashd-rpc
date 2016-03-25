@@ -1,6 +1,6 @@
 {
-  "name": "bitcoind-rpc",
-  "description": "Bitcoin Client Library to connect to Bitcoin Core via RPC",
+  "name": "dashd-rpc",
+  "description": "Client Library to connect to Dash via RPC",
   "version": "0.5.0",
   "author": {
     "name": "Stephen Pair",
@@ -22,15 +22,19 @@
     {
       "name": "Braydon Fuller",
       "email": "braydon@bitpay.com"
+    },
+    {
+      "name": "Ira Miller",
+      "email": "ira@deginner.com"
     }
   ],
   "keywords": [
-    "bitcoin",
+    "dash",
     "rpc"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcoind-rpc"
+    "url": "https://github.com/isysd/dashd-rpc"
   },
   "license": "MIT",
   "main": "lib/index.js",
@@ -47,7 +51,7 @@
     "sinon": "^1.12.2"
   },
   "bugs": {
-    "url": "https://github.com/bitpay/bitcoind-rpc/issues"
+    "url": "https://github.com/isysd/dashd-rpc/issues"
   },
-  "homepage": "https://github.com/bitpay/bitcoind-rpc"
+  "homepage": "https://github.com/isysd/dashd-rpc"
 }

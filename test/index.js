@@ -148,7 +148,7 @@ describe('RpcClient', function() {
     });
 
     async.eachSeries([true, 'true', 1, '1', 'True'], function(i, next) {
-      client.importAddress('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', '', i, function(error, parsedBuf) {
+      client.importAddress('y6kTWD5Gai17gJuwUFeMcviQ26uBss6Ttb', '', i, function(error, parsedBuf) {
         should.not.exist(error);
         should.exist(parsedBuf);
         parsedBuf.params[2].should.equal(true);
@@ -183,12 +183,12 @@ describe('RpcClient', function() {
       return req;
     });
 
-    var obj = {'n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X': 1};
+    var obj = {'y6kTWD5Gai17gJuwUFeMcviQ26uBss6Ttb': 1};
     async.eachSeries([obj, JSON.stringify(obj)], function(i, next) {
       client.sendMany('account', i, function(error, parsedBuf) {
         should.not.exist(error);
         should.exist(parsedBuf);
-        parsedBuf.params[1].should.have.property('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', 1);
+        parsedBuf.params[1].should.have.property('y6kTWD5Gai17gJuwUFeMcviQ26uBss6Ttb', 1);
         next();
       });
     }, function(err) {
@@ -258,10 +258,10 @@ describe('RpcClient', function() {
       return new FakeRequest();
     });
 
-    client.getBalance('n28S35tqEMbt6vNad7A5K3mZ7vdn8dZ86X', 6, function(error, parsedBuf) {
+    client.getBalance('y6kTWD5Gai17gJuwUFeMcviQ26uBss6Ttb', 6, function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Connection Rejected: 401 Unnauthorized');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Connection Rejected: 401 Unnauthorized');
       done();
     });
 
@@ -291,7 +291,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Connection Rejected: 403 Forbidden');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Connection Rejected: 403 Forbidden');
       done();
     });
 
@@ -325,7 +325,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Request Error: write EPIPE');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Request Error: write EPIPE');
       done();
     });
 
@@ -388,7 +388,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Request Error: connect ECONNREFUSED');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Request Error: connect ECONNREFUSED');
       done();
     });
 
@@ -419,7 +419,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Error Parsing JSON: Unexpected token o');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Error Parsing JSON: Unexpected token o');
       done();
     });
 
@@ -450,7 +450,7 @@ describe('RpcClient', function() {
     client.getDifficulty(function(error, parsedBuf) {
       requestStub.restore();
       should.exist(error);
-      error.message.should.equal('Bitcoin Core JSON-RPC: host=localhost port=8332: Error Parsing JSON: Unexpected end of input');
+      error.message.should.equal('Dash JSON-RPC: host=localhost port=8332: Error Parsing JSON: Unexpected end of input');
       done();
     });
 
